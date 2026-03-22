@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MG-CRO — Maintenance-Gated Correlation & Remediation Orchestrator</title>
+<link rel="stylesheet" href="assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <span class="logo-mark">MG</span>
+      <span class="logo-text">CRO</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#problem">Problem</a></li>
+      <li><a href="#solution">Solution</a></li>
+      <li><a href="#architecture">Architecture</a></li>
+      <li><a href="#techstack">Tech Stack</a></li>
+      <li><a href="#phases">Roadmap</a></li>
+      <li><a href="#team">Team</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="grid-overlay"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">AINNOVATE · IDEATHON · KYNDRYL</div>
+    <h1 class="hero-title">
+      <span class="title-line">Maintenance-Gated</span>
+      <span class="title-line accent">Correlation &</span>
+      <span class="title-line">Remediation</span>
+      <span class="title-line accent">Orchestrator</span>
+    </h1>
+    <p class="hero-sub">A closed-loop, maintenance-aware incident decisioning and auto-remediation architecture. Modular five-agent AI system that eliminates ticket noise, resolves incidents autonomously, and escalates with full context.</p>
+    <div class="hero-metrics">
+      <div class="hm"><span class="hm-val">≥60%</span><span class="hm-label">Ticket reduction</span></div>
+      <div class="hm-div"></div>
+      <div class="hm"><span class="hm-val">≥30%</span><span class="hm-label">MTTR improvement</span></div>
+      <div class="hm-div"></div>
+      <div class="hm"><span class="hm-val">≥80%</span><span class="hm-label">Auto-remediation</span></div>
+    </div>
+    <div class="hero-actions">
+      <a href="#solution" class="btn btn-primary">Explore the solution</a>
+      <a href="#architecture" class="btn btn-ghost">View architecture</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="section" id="problem">
+  <div class="container">
+    <div class="section-label">01 · The Problem</div>
+    <h2 class="section-title">Operations drowning in preventable noise</h2>
+    <p class="section-desc">Uncontrolled alert floods and duplicate incident creation — especially during approved maintenance windows — inflating triage latency, overwhelming operations, and increasing avoidable SLA exposure.</p>
+
+    <div class="problem-grid">
+      <div class="problem-stat">
+        <div class="ps-number">3–5×</div>
+        <div class="ps-label">Ticket inflation per root cause</div>
+        <div class="ps-detail">Every symptom treated as a unique incident — no correlation, no grouping</div>
+      </div>
+      <div class="problem-stat">
+        <div class="ps-number">4–8hr</div>
+        <div class="ps-label">Avg MTTR for sub-5-min fixes</div>
+        <div class="ps-detail">L1/L2 engineers drown in redundant, context-free work</div>
+      </div>
+      <div class="problem-stat">
+        <div class="ps-number">4</div>
+        <div class="ps-label">ITIL processes with no AI loop</div>
+        <div class="ps-detail">Incident, Problem, Change, CSI — all operating blind</div>
+      </div>
+    </div>
+
+    <div class="itil-gaps">
+      <h3 class="gaps-title">ITIL Process Gaps</h3>
+      <div class="gaps-grid">
+        <div class="gap-card">
+          <div class="gap-process">Incident Management</div>
+          <div class="gap-issue">No correlation — every symptom treated as a unique incident</div>
+        </div>
+        <div class="gap-card">
+          <div class="gap-process">Problem Management</div>
+          <div class="gap-issue">No signal — root causes never permanently resolved</div>
+        </div>
+        <div class="gap-card">
+          <div class="gap-process">Change Management</div>
+          <div class="gap-issue">Ansible runs blind — no change window awareness</div>
+        </div>
+        <div class="gap-card">
+          <div class="gap-process">CSI</div>
+          <div class="gap-issue">No learning loop — same failures repeat indefinitely</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="section section-dark" id="solution">
+  <div class="container">
+    <div class="section-label light">02 · The Solution</div>
+    <h2 class="section-title light">One system. Full ownership of the incident lifecycle.</h2>
+    <p class="section-desc light">MG-CRO correlates alerts, resolves low-risk incidents autonomously, and routes complex ones pre-diagnosed to the right team — eliminating ticket noise entirely.</p>
+
+    <div class="agents-grid">
+      <div class="agent-card" data-index="1">
+        <div class="agent-num">01</div>
+        <div class="agent-name">Perception & Correlation</div>
+        <div class="agent-role">Event Intake & Root Cause Grouping</div>
+        <div class="agent-desc">Ingests, enriches, groups and suppresses cascading alerts. Raw alert noise consolidated into one actionable root cause event — change conflicts blocked before they happen.</div>
+        <div class="agent-tags">
+          <span>Alert dedup</span><span>Blast radius</span><span>Maintenance gate</span>
+        </div>
+      </div>
+      <div class="agent-card" data-index="2">
+        <div class="agent-num">02</div>
+        <div class="agent-name">Decision & Risk Agent</div>
+        <div class="agent-role">Classification, Autonomy & Playbook Selection</div>
+        <div class="agent-desc">Classifies risk, sets autonomy level, selects the best playbook. Every incident gets the right level of response — including alert variants never seen before.</div>
+        <div class="agent-tags">
+          <span>Risk scoring</span><span>RAG selection</span><span>Autonomy policy</span>
+        </div>
+      </div>
+      <div class="agent-card" data-index="3">
+        <div class="agent-num">03</div>
+        <div class="agent-name">Execution & Safety Agent</div>
+        <div class="agent-role">Dry-Run Gating & Autonomous Remediation</div>
+        <div class="agent-desc">Dry-runs, executes, halts if unstable. Ansible never runs blindly. Low and medium risk incidents resolved end-to-end with no human involvement and no risk of worsening the incident.</div>
+        <div class="agent-tags">
+          <span>Dry-run gate</span><span>Syntax validate</span><span>Auto-rollback</span>
+        </div>
+      </div>
+      <div class="agent-card" data-index="4">
+        <div class="agent-num">04</div>
+        <div class="agent-name">Verification & Approval Agent</div>
+        <div class="agent-role">Post-Check & Human-in-the-Loop Gateway</div>
+        <div class="agent-desc">Confirms resolution, gates medium and high risk. Resolution confirmed by data not assumption. Engineers stay in control where it matters with a complete picture before touching anything.</div>
+        <div class="agent-tags">
+          <span>Post-check</span><span>Teams card</span><span>One-click approve</span>
+        </div>
+      </div>
+      <div class="agent-card" data-index="5">
+        <div class="agent-num">05</div>
+        <div class="agent-name">Reporting & Learning Agent</div>
+        <div class="agent-role">Audit, Escalation & Continuous Improvement</div>
+        <div class="agent-desc">Logs, assigns, ranks, flags patterns. No ticket flooding, no blank escalations, no queue triage. Every record complete and auditable. The system improves with every incident.</div>
+        <div class="agent-tags">
+          <span>Audit trail</span><span>SNOW enrich</span><span>Learning loop</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="risk-table-wrap">
+      <h3 class="risk-table-title">Risk-Based Autonomy Matrix</h3>
+      <div class="risk-table">
+        <div class="rt-header">
+          <span>Alert Family</span>
+          <span>Risk</span>
+          <span>AI Action</span>
+          <span>Ansible Playbook</span>
+          <span>Outcome</span>
+        </div>
+        <div class="rt-row">
+          <span>Disk Full / Inode</span>
+          <span class="risk-badge risk-low">Low</span>
+          <span>Auto Execute</span>
+          <span><code>Linux_Clear_Tmp_Logs</code></span>
+          <span>Single closed ticket</span>
+        </div>
+        <div class="rt-row">
+          <span>CrashLoop / Svc Stop</span>
+          <span class="risk-badge risk-med">Medium</span>
+          <span>Dry-run then Auto Restart</span>
+          <span><code>K8s_Pod_Reschedule</code></span>
+          <span>Tech dashboard notified</span>
+        </div>
+        <div class="rt-row">
+          <span>AKS Node / VMware Mem</span>
+          <span class="risk-badge risk-high">High</span>
+          <span>Diagnose only → Page L3</span>
+          <span><code>Disk_PVC_Expand</code> (read-only)</span>
+          <span>Enriched ticket — L3 team</span>
+        </div>
+        <div class="rt-row">
+          <span>etcd / Cluster Down</span>
+          <span class="risk-badge risk-crit">Critical</span>
+          <span>Advisory only → Page L3 immediately</span>
+          <span>Read-only</span>
+          <span>P1 ticket, L3 alerted</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section class="section" id="architecture">
+  <div class="container">
+    <div class="section-label">03 · Architecture</div>
+    <h2 class="section-title">Before & After — the fundamental shift</h2>
+
+    <div class="arch-compare">
+      <div class="arch-before">
+        <div class="arch-label-tag before-tag">Before · CACF / Current State</div>
+        <div class="arch-items">
+          <div class="arch-item bad"><span class="arch-icon">✕</span>Static rule matching only</div>
+          <div class="arch-item bad"><span class="arch-icon">✕</span>No dry-run validation</div>
+          <div class="arch-item bad"><span class="arch-icon">✕</span>No root-cause correlation</div>
+          <div class="arch-item bad"><span class="arch-icon">✕</span>Blind Ansible execution</div>
+          <div class="arch-item bad"><span class="arch-icon">✕</span>Un-enriched tickets</div>
+          <div class="arch-item bad"><span class="arch-icon">✕</span>Manual L2/L3 dispatch</div>
+          <div class="arch-item bad"><span class="arch-icon">✕</span>Same failures repeat forever</div>
+        </div>
+        <div class="arch-result bad-result">High MTTR · SLA at risk</div>
+      </div>
+      <div class="arch-arrow-col">
+        <div class="arch-arrow-line"></div>
+        <div class="arch-arrow-label">MG-CRO<br>transforms</div>
+        <div class="arch-arrow-line"></div>
+      </div>
+      <div class="arch-after">
+        <div class="arch-label-tag after-tag">After · MG-CRO AI Agent</div>
+        <div class="arch-items">
+          <div class="arch-item good"><span class="arch-icon">✓</span>AI correlation — 1 root cause event</div>
+          <div class="arch-item good"><span class="arch-icon">✓</span>Dry-run before every execution</div>
+          <div class="arch-item good"><span class="arch-icon">✓</span>Maintenance-aware suppression</div>
+          <div class="arch-item good"><span class="arch-icon">✓</span>Risk-gated autonomy levels</div>
+          <div class="arch-item good"><span class="arch-icon">✓</span>Pre-diagnosed enriched tickets</div>
+          <div class="arch-item good"><span class="arch-icon">✓</span>Direct team assignment</div>
+          <div class="arch-item good"><span class="arch-icon">✓</span>Learning loop — patterns reduce</div>
+        </div>
+        <div class="arch-result good-result">Low MTTR · SLA protected</div>
+      </div>
+    </div>
+
+    <div class="flow-section">
+      <h3 class="flow-title">End-to-End Event Flow</h3>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="fs-node fs-alert">Infra Alert</div>
+          <div class="fs-arrow">→</div>
+        </div>
+        <div class="flow-step">
+          <div class="fs-node fs-netcool">Netcool Enrich</div>
+          <div class="fs-arrow">→</div>
+        </div>
+        <div class="flow-step">
+          <div class="fs-node fs-kafka">Kafka Stream</div>
+          <div class="fs-arrow">→</div>
+        </div>
+        <div class="flow-step">
+          <div class="fs-node fs-corr">Correlate & Gate</div>
+          <div class="fs-arrow">→</div>
+        </div>
+        <div class="flow-step">
+          <div class="fs-node fs-risk">Risk Classify</div>
+          <div class="fs-arrow">→</div>
+        </div>
+        <div class="flow-step">
+          <div class="fs-node fs-rag">RAG Select</div>
+          <div class="fs-arrow">→</div>
+        </div>
+        <div class="flow-step">
+          <div class="fs-node fs-dry">Dry-Run Check</div>
+          <div class="fs-arrow">→</div>
+        </div>
+        <div class="flow-step">
+          <div class="fs-node fs-exec">Execute / Escalate</div>
+          <div class="fs-arrow">→</div>
+        </div>
+        <div class="flow-step">
+          <div class="fs-node fs-snow">SNOW Ticket</div>
+        </div>
+      </div>
+      <div class="flow-guards">
+        <span>Change Window Gate</span>
+        <span>Dry-Run Before Every Execution</span>
+        <span>Human Approval · Medium+ Risk</span>
+        <span>100% Audit Trail</span>
+        <span>Auto-Rollback on Post-Check Fail</span>
+        <span>Client Context Translation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="section section-dark" id="techstack">
+  <div class="container">
+    <div class="section-label light">04 · Tech Stack</div>
+    <h2 class="section-title light">Backend Architecture — MG-CRO AI Agent</h2>
+    <p class="section-desc light">Modular multi-agent architecture · supervised orchestration · RAG runbook selection · risk-gated execution · immutable audit trail</p>
+
+    <div class="stack-layers" id="stackLayers">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- PHASES -->
+<section class="section" id="phases">
+  <div class="container">
+    <div class="section-label">05 · Roadmap</div>
+    <h2 class="section-title">Phase-by-Phase Implementation</h2>
+    <p class="section-desc">Zero to Full Autonomy · 5 Phases · From Shadow Listener to Cognitive Self-Healing</p>
+
+    <div class="phases-track">
+      <div class="phase-connector"></div>
+      <div class="phases-row">
+
+        <div class="phase-card" data-phase="1">
+          <div class="phase-dot" style="background:#1D9E75"></div>
+          <div class="phase-num-label">Phase 1</div>
+          <div class="phase-badge" style="background:#E1F5EE;color:#085041">Listener · Zero Risk</div>
+          <div class="phase-name">Observability<br><em>The Shadow Brain</em></div>
+          <div class="phase-items">
+            <div class="pi">Wire Netcool → Kafka consumer</div>
+            <div class="pi">CMDB + Change Mgmt feed integration</div>
+            <div class="pi">LangGraph skeleton setup</div>
+            <div class="pi">Maintenance Gate node (read-only)</div>
+            <div class="pi">Shadow correlation logging</div>
+            <div class="pi">Neo4j topology map load</div>
+          </div>
+          <div class="phase-kpi">KPI: Correlation accuracy matches senior engineer grouping</div>
+        </div>
+
+        <div class="phase-card" data-phase="2">
+          <div class="phase-dot" style="background:#378ADD"></div>
+          <div class="phase-num-label">Phase 2</div>
+          <div class="phase-badge" style="background:#E6F1FB;color:#0C447C">Advisor · Low Risk</div>
+          <div class="phase-name">Smart Advisor<br><em>Human in the Loop</em></div>
+          <div class="phase-items">
+            <div class="pi">Weaviate runbook vector DB setup</div>
+            <div class="pi">bge-large embeddings pipeline</div>
+            <div class="pi">RAG runbook selector live</div>
+            <div class="pi">Priority classifier (rules + ML)</div>
+            <div class="pi">Recommendation panel in SNOW</div>
+            <div class="pi">Dry-Run button for technician</div>
+          </div>
+          <div class="phase-kpi">KPI: Suggestion acceptance rate by tech teams</div>
+        </div>
+
+        <div class="phase-card" data-phase="3">
+          <div class="phase-dot" style="background:#BA7517"></div>
+          <div class="phase-num-label">Phase 3</div>
+          <div class="phase-badge" style="background:#FAEEDA;color:#633806">Auto low-risk · Medium</div>
+          <div class="phase-name">Conditional Autonomy<br><em>Junior Admin</em></div>
+          <div class="phase-items">
+            <div class="pi">NEXT API integration live</div>
+            <div class="pi">Ansible Tower connected</div>
+            <div class="pi">Redis TTL correlation cache</div>
+            <div class="pi">Allow-list of 5–10 safe tasks</div>
+            <div class="pi">Auto dry-run → auto execute</div>
+            <div class="pi">Auto-rollback on failure</div>
+          </div>
+          <div class="phase-kpi">KPI: MTTR reduction for allow-list task category</div>
+        </div>
+
+        <div class="phase-card" data-phase="4">
+          <div class="phase-dot" style="background:#D85A30"></div>
+          <div class="phase-num-label">Phase 4</div>
+          <div class="phase-badge" style="background:#FAECE7;color:#712B13">Complex auto-fix · High</div>
+          <div class="phase-name">Orchestrated Autonomy<br><em>Specialist</em></div>
+          <div class="phase-items">
+            <div class="pi">Client Context Translation Layer</div>
+            <div class="pi">HashiCorp Vault for secrets</div>
+            <div class="pi">Chroma DB learning store</div>
+            <div class="pi">Multi-agent collaboration</div>
+            <div class="pi">Network + Storage + App agents</div>
+            <div class="pi">Dynamic thresholding via ML</div>
+          </div>
+          <div class="phase-kpi">KPI: Touchless resolution rate across all L1/L2 tickets</div>
+        </div>
+
+        <div class="phase-card" data-phase="5">
+          <div class="phase-dot" style="background:#A32D2D"></div>
+          <div class="phase-num-label">Phase 5</div>
+          <div class="phase-badge" style="background:#FCEBEB;color:#791F1F">Predictive · Mission Critical</div>
+          <div class="phase-name">Cognitive Autonomy<br><em>Zero Touch</em></div>
+          <div class="phase-items">
+            <div class="pi">Predictive telemetry pipeline</div>
+            <div class="pi">Policy-as-Code engine</div>
+            <div class="pi">Continuous learning pipeline</div>
+            <div class="pi">Predictive self-healing (pre-alert)</div>
+            <div class="pi">AI "Constitution" enforced</div>
+            <div class="pi">Learns from every human fix</div>
+          </div>
+          <div class="phase-kpi">KPI: SLA/SLO achievement · 99.99% autonomous uptime</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="section section-accent" id="team">
+  <div class="container">
+    <div class="section-label">06 · Team</div>
+    <h2 class="section-title">Code Blooded</h2>
+    <p class="section-desc">KSTP IPC · Kyndryl · AINNOVATE Ideathon 2025</p>
+
+    <div class="team-grid">
+      <div class="team-card leader">
+        <div class="team-role-badge">Team Leader</div>
+        <div class="team-avatar">SS</div>
+        <div class="team-name">Shankar S S</div>
+        <a href="mailto:shankarss@kyndryl.com" class="team-email">shankarss@kyndryl.com</a>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">SB</div>
+        <div class="team-name">Sanjay B</div>
+        <a href="mailto:sanjay.b@kyndryl.com" class="team-email">sanjay.b@kyndryl.com</a>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">MM</div>
+        <div class="team-name">Mothesh M</div>
+        <a href="mailto:mothesh.m@kyndryl.com" class="team-email">mothesh.m@kyndryl.com</a>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">GS</div>
+        <div class="team-name">Gokul Sekar</div>
+        <a href="mailto:gokulsekar@kyndryl.com" class="team-email">gokulsekar@kyndryl.com</a>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">SN</div>
+        <div class="team-name">Sanjay Naresh</div>
+        <a href="mailto:sanjaynaresh@kyndryl.com" class="team-email">sanjaynaresh@kyndryl.com</a>
+      </div>
+      <div class="team-card mentor">
+        <div class="team-role-badge mentor-badge">Mentor</div>
+        <div class="team-avatar">CP</div>
+        <div class="team-name">Charan Pujari</div>
+        <a href="mailto:Charan.Pujari@kyndryl.com" class="team-email">Charan.Pujari@kyndryl.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark">MG</span><span class="logo-text">CRO</span>
+        <span class="footer-sub">Maintenance-Gated Correlation & Remediation Orchestrator</span>
+      </div>
+      <div class="footer-right">
+        <span class="footer-conf">Kyndryl Confidential</span>
+        <span class="footer-copy">© Kyndryl, Inc. 2025</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
